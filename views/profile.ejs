@@ -1,0 +1,58 @@
+<%- include('base') %>
+
+    <!-- profile page -->
+
+    <div class="profile-container">
+
+        <div class="profile-left-side">
+            <div class="profile-details">
+                <img src="/images/profile_pics/<%= user.profilePic %>" class="profile-img">
+                <div>
+                    <h3><%= user.firstName %> <%= user.lastName %></h3>
+                    <p>120 friends</p>
+                    <img src="/images/profile_pics/Screenshot (5).png">
+                    <img src="/images/profile_pics/Screenshot (5).png">
+                    <img src="/images/profile_pics/Screenshot (5).png">
+
+                    <a href="/update-profile"><button class="black-btn">Update Profile</button></a>
+                </div>
+                
+            </div>
+
+            
+    
+            <div class="profile-info">
+                <div class="profile-intro">
+                    <h1><%= user.username %> </h1>
+                    <h3>Intro</h3>
+                    <p class="intro-text">I am a young, energitic backend developer with exprience in Django and NodeJS.</p>
+                    <hr>
+                    <ul>
+                        <li><img src="#"> Backend Developer</li>
+                        <li><img src="#">Universtity of Ghana</li>
+                        <li><img src="#">Accra,Ghana</li>
+                        <li><img src="#">From Ghana</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-right-side">
+            <div class="profile-info">
+                <h3>Posts by <%= user.firstName %> <%= user.lastName %></h3>
+                
+            
+                <div class="photo-box">
+                    <div><img src="/images/profile_pics/Screenshot (5).png"></div>
+                    <div><img src="/images/profile_pics/Screenshot (5).png"></div>
+                    <div><img src="/images/profile_pics/Screenshot (5).png"></div>
+                    <div><img src="/images/profile_pics/Screenshot (5).png"></div>
+         
+                </div>
+               
+                
+            </div>
+        </div>
+
+    </div>
+

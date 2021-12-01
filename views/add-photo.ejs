@@ -1,0 +1,33 @@
+<%- include('base') %>
+
+<div class="content">
+  <div class="form-container">
+    <form method="post" action="/processPostUpload" enctype="multipart/form-data">
+
+      
+      <div class="form-control">
+        <h3>Join today</h3>
+
+        <label for="">User</label>
+        <select name="user" >
+          <option value="<%= userLoggedIn._id %>"><%=userLoggedIn.username %></option>
+        </select>
+
+        <label for="">Upload Image</label>
+        <input type="file" name="postImg">
+        <br> <br>
+
+        <label for="">Category</label>
+        <input type="text" placeholder="Enter your username..." name="postCat">
+
+        <label for="">Description</label>
+        <textarea name="postDesc" id="" cols="30" rows="10"></textarea>
+        
+      </div>
+    
+      <button class="btn">POST</button>
+    
+    </form>
+  </div>
+</div>
+

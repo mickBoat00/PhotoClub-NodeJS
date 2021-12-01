@@ -1,0 +1,95 @@
+<%- include('base') %>
+
+<!---- sidebar -->
+     
+<div class="sidebar">
+    <div class="category-links">
+        <a href=""><img src="{% static 'images/home.png' %}" alt=""><p>Categories</p></a>
+        <a href="{% url 'gallery' %}"><img src="{% static 'images/arrow.png' %}" alt=""><p>All</p></a>
+        <% for (var i=0; i< categories.length; i++) { %>
+            <a href="/?category=<%= categories[i].name %>">
+                <img src="{% static 'images/arrow.png' %}" alt="">
+                <p><%= categories[i].name %></p>
+            </a>
+
+        <% } %>
+       
+        <hr>
+        <a href="/add-photo"><button class="black-btn">Add Photo</button></a>
+    </div>
+</div>
+
+<!----main --- -->
+<div class="container">
+    <!--
+        <div class="banner"> 
+        <img src="{% static 'images/banner.png' %}">
+    </div>   
+    -->
+    
+
+    <div class="list-container">
+        <% for (var i=0; i< posts.length; i++) { %>
+        
+
+        <div class="card">
+            <div class="author">
+                <a href="/profile/postAuthors[i]._id"><img src="/images/profile_pics/<%= postAuthors[i].profilePic %>"></a>
+                <div class="author-info">
+                    <a href="/profile/postAuthors[i]._id"><strong><%= postAuthors[i].firstName %> <%= postAuthors[i].lastName %></strong></a>
+                    <small><%= posts[i].createdAt %></small>
+                </div>
+            </div>
+
+            
+            <div class="card-content">
+                <a href="/view-pic/<%= posts[i]._id %>">
+                    <img src="/images/post_pics/<%= posts[i].image %>">
+                </a>
+        
+                <div class="pic-info">
+                    <h4>Category: <%= posts[i].category %> </h4>
+              
+                    <p class="pic-view">
+                        <a href="/view-pic/<%= posts[i]._id %>"><button class="hero-btn">View Picture</button></a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <% } %>
+
+        
+
+        <!-- If the data base is 
+                empty display no phone 
+                    to show yet -->
+
+        
+        
+    </div>
+
+    
+
+    <div class="flex-div" style="margin-top: 20px; margin-left: 300px;">
+    
+        
+        <a href="#"><button class="hero-btn">First</button></a>
+        <a href="#"><button class="hero-btn">Previous</button></a>
+        <a href="#"><button class="black-btn">3</button></a>
+           
+        <a href="#"><button class="hero-btn">4</button></a>
+       
+  
+        <a href="#"><button class="hero-btn">Next</button></a>
+        <a href="#"><button class="hero-btn">Last</button></a>
+
+
+    </div>
+
+    
+   
+</div>
+

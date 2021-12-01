@@ -1,0 +1,32 @@
+<%- include('base') %>
+
+<div class="content">
+  <div class="form-container">
+    <form method="post" action="/processPostUpdate" enctype="multipart/form-data" >
+
+      
+      <div class="form-control">
+        <h3>Update Post</h3>
+
+        <label for="">Post ID</label>
+        <select name="postToUpdateID" >
+          <option value="<%= post._id %>"><%= post._id %></option>
+        </select>
+
+        <label for="">Upload Image</label>
+        <input type="file" name="postImg">
+        <br> <br>
+
+        <label for="">Category</label>
+        <input type="text" placeholder="Enter your username..." name="postCat" value="<%= post.category %>">
+
+        <label for="">Description</label>
+        <textarea name="postDesc" cols="30" rows="10" ><%= post.description %></textarea>
+      </div>
+    
+      <button class="btn">UPDATE</button>
+    
+    </form>
+  </div>
+</div>
+

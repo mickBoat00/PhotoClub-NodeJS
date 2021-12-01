@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoClub</title>   
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+</head>
+<body>
+
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="" class="menu-icon">
+            <a href="/">
+                <h2>PhotoClub</h2>  
+            </a>
+        </div>
+        <div class="nav-middle flex-div">
+            <form class="flex-div" method="POST" action="#">
+                
+                <div class="search-box flex-div">
+                    <input name="searched" type="text" placeholder="Search Category Of Photos...">
+                </div>
+                <input class="search-btn" type="submit" value="Search">
+            </form>
+        </div>
+        <div class="nav-right flex-div">
+            <!-- IF USER IS AUTHENTICATED -->
+            <% if (userLoggedIn) { %>
+                <a href="/profile/61a21d1386ae5c66c45c6580" style="margin-right: 5px;"><h3>Profile</h3></a>
+                <a href="/users/logout" style="margin-right: 5px;"><h3>Logout</h3></a>
+                <a href=""><img src="/images/profile_pics/user-default.png" class="user-icon"></a>
+            <% } else { %>
+      
+                <!-- ELSE IF HE IS NOT  -->
+                <a href="/users/login" style="margin-right: 5px;"><h3>Login</h3></a>
+                <a href="/users/register" style="margin-right: 5px;"><h3>Register</h3></a>
+            <% } %>
+          
+            
+        </div>
+    </nav>
+
+   
+
+    <script src=""></script>
+</body>
+</html>

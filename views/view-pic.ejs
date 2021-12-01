@@ -1,0 +1,87 @@
+<%- include('base') %>
+    <div class="container view-container">
+        <div class="row">
+            <div class="view-pic">
+                <img src="/images/post_pics/<%= post.image %>">
+                <h3>Category: <%= post.category %></h3>
+                
+                <hr>
+                <div class="flex-div" style="justify-content: space-between;">
+                  
+                        <a href="/update-pic/<%= post._id %>"><button class="hero-btn">Update Picture</button></a>
+                        <a href=""><button class="black-btn">Delete Picture</button></a>
+               
+                 
+                </div>
+                <hr>
+
+                <div class="plublisher">
+                    <a href="">
+                        <img src="/images/profile_pics/<%= postAuthor.profilePic %>">
+                    </a>
+                    
+                    <div>
+                        <a href=""><%= postAuthor.firstName %> <%= postAuthor.lastName %></a><br>
+                        <span><%= post.createdAt %></span>
+                    </div>
+                </div>
+                <div class="pic-description">
+                    <p><%= post.description %></p>
+                    <hr> 
+                    <h4>Comment</h4>
+
+
+                    
+
+                    <div class="add-comment">
+                        <div class="flex-div">
+                            <img src="/images/profile_pics/user-default.png">
+                            <a href="/view-pic/<%= post._id %>/comment"><button class="black-btn">Add Comment</button></a>
+                        </div>  
+                    </div>   
+
+                    <div>
+                        <% for (var i=0; i< comments.length; i++) { %>
+                            <div class="old-comment">
+                                <img src="/images/profile_pics/Screenshot (1).png">
+                                <div>
+                                    <h3><%= comments[i].commenter %><span><%= comments[i].createdAt %></span></h3>
+                                    <p><%= comments[i].comment_body %> </p>
+                                </div>
+                            </div>
+
+                        <% } %>
+                        <div class="old-comment">
+                            <img src="/images/profile_pics/Screenshot (1).png">
+                            <div>
+                                <h3>Jane Doe<span>12/12/2021</span></h3>
+                                <p>I love this pic very much. </p>
+                            </div>
+                        </div>
+
+                        <div class="old-comment">
+                            <img src="/images/profile_pics/Screenshot (1).png">
+                            <div>
+                                <h3>Jane Doe<span>12/12/2021</span></h3>
+                                <p>I love this pic very much. </p>
+                            </div>
+                        </div>
+
+                        <div class="old-comment">
+                            <img src="/images/profile_pics/Screenshot (1).png">
+                            <div>
+                                <h3>Jane Doe<span>12/12/2021</span></h3>
+                                <p>I love this pic very much. </p>
+                            </div>
+                        </div>
+ 
+                    </div>
+
+                </div>
+                
+
+            </div>
+
+        
+        </div>
+    </div>

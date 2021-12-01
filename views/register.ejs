@@ -1,0 +1,37 @@
+<%- include('base') %>
+
+<div class="content">
+  <div class="form-container">
+    <form method="post" action="/users/processUserRegisteration" enctype="multipart/form-data">
+
+      
+      <div class="form-control">
+        <h3>Join today</h3>
+
+        <label for="">Enter your first name</label>
+        <input type="text" placeholder="Enter your username..." name="firstName">
+
+        <label for="">Enter your last name</label>
+        <input type="text" placeholder="Enter your username..." name="lastName">
+    
+        <label for="">Enter your username</label>
+        <input type="text" placeholder="Enter your username..." name="username">
+
+        <label for="">Profile Picture</label>
+        <input type="file" name="profile_pic">
+        <br> <br>
+
+        <label for="">Create a password</label>
+        <input type="password" name="password1" placeholder="Create a new password....">
+
+        <label for="">Confirm password</label>
+        <input type="password" name="password2" placeholder="Confirm password....">
+      </div>
+    
+      <button class="btn">Sign Up</button>
+    
+      <p class="text">Already Have an account? <a href="/users/login">Sign In</a> </p>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<%- include('base') %>
+
+<div class="content">
+  <div class="form-container">
+    <form action="/processCommentUpload" method="post" >
+
+      
+      <div class="form-control">
+        <h3>Add Comment</h3>
+
+        <label for="">Post ID</label>
+        <select name="postID" >
+          <option value="<%= postID %>"><%= postID %></option>
+        </select>
+
+        <label for="">User</label>
+        <select name="user" >
+          <option value="<%= userLoggedIn._id %>"><%=userLoggedIn.username %></option>
+        </select>
+
+        <label for="">Comment Body</label>
+        <textarea name="commentBody" id="" cols="30" rows="10"></textarea>
+        
+      </div>
+    
+      <button class="btn">POST</button>
+    
+    </form>
+  </div>
+</div>
+
